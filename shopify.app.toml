@@ -1,0 +1,36 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "3adb916e3b542fcd3361f37dd4def259"
+application_url = "https://perfume-mating-module-lightbox.trycloudflare.com"
+embedded = true
+name = "wishlist-inspire"
+handle = "wishlist-inspire-310"
+
+[webhooks]
+api_version = "2025-01"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://perfume-mating-module-lightbox.trycloudflare.com/auth/callback",
+  "https://perfume-mating-module-lightbox.trycloudflare.com/auth/shopify/callback",
+  "https://perfume-mating-module-lightbox.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "learning-mangoit.myshopify.com"
+automatically_update_urls_on_dev = true
